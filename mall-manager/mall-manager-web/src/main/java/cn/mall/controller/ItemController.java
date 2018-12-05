@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * 商品Controller
  */
@@ -30,5 +32,11 @@ public class ItemController {
     public TbItem queryItemInfo(@PathVariable long itemID) {
         TbItem item = itemService.queryItemByID(itemID);
         return item;
+    }
+
+    @RequestMapping("/item/all")
+    @ResponseBody
+    public List<TbItem> queryAllItemInfo() {
+        return itemService.queryAllItemInfo();
     }
 }

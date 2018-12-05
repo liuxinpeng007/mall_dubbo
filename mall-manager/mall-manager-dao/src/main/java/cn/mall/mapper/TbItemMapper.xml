@@ -16,11 +16,21 @@
     <result column="updated" property="updated" jdbcType="TIMESTAMP" />
   </resultMap>
 
+  <sql id="Base_Column_List" >
+    id, title, sell_point, price, num, barcode, image, cid, status, created, updated
+  </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select
     <include refid="Base_Column_List" />
     from tb_item
     where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="queryAllItemInfo" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from tb_item
   </select>
 
   <sql id="Example_Where_Clause" >
@@ -81,9 +91,7 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List" >
-    id, title, sell_point, price, num, barcode, image, cid, status, created, updated
-  </sql>
+
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.mall.pojo.TbItemExample" >
     select
     <if test="distinct" >

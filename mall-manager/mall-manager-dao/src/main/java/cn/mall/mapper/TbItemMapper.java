@@ -8,6 +8,9 @@ import cn.mall.pojo.TbItemExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface TbItemMapper {
+
+    List<TbItem> queryAllItemInfo();
+
     int countByExample(TbItemExample example);
 
     int deleteByExample(TbItemExample example);
