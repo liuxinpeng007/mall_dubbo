@@ -6,16 +6,25 @@ import cn.mall.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 商品表Service
+ */
 @Service("itemService")
 public class ItemServiceImpl implements ItemService {
 
+    /**
+     * 商品Mapper
+     */
     @Autowired
     private TbItemMapper itemMapper;
 
+    /**
+     * 根据商品ID查询商品信息
+     * @param itemID 商品ID
+     * @return
+     */
     public TbItem queryItemByID(long itemID) {
-        System.out.println("queryItemByID() - begin");
         TbItem item = itemMapper.selectByPrimaryKey(itemID);
-        System.out.println("queryItemByID() - end");
         return item;
     }
 }

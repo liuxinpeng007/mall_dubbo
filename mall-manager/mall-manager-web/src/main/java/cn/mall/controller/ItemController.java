@@ -8,12 +8,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * 商品Controller
+ */
 @Controller
 public class ItemController {
 
+    /**
+     * 商品Service
+     */
     @Autowired
     private ItemService itemService;
 
+    /**
+     * 根据商品ID查询商品
+     * @param itemID
+     * @return
+     */
     @RequestMapping("/item/{itemID}")
     @ResponseBody
     public TbItem queryItemInfo(@PathVariable long itemID) {
