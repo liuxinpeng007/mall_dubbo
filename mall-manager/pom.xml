@@ -15,7 +15,6 @@
         <module>mall-manager-dao</module>
         <module>mall-manager-pojo</module>
         <module>mall-manager-service</module>
-        <module>mall-manager-web</module>
     </modules>
     <artifactId>mall-manager</artifactId>
 

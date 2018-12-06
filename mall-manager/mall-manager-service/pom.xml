@@ -11,7 +11,7 @@
 
     <artifactId>mall-manager-service</artifactId>
 
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
