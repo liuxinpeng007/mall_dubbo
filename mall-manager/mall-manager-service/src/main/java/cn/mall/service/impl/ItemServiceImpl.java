@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 商品表Service
  */
-@Service("itemService")
+@Service
 public class ItemServiceImpl implements ItemService {
 
     /**
