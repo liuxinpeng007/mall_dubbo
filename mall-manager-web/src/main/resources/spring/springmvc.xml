@@ -17,6 +17,10 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <!-- 配置资源映射 -->
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
+
     <!-- 给自己项目起个名称，不能重复 -->
     <dubbo:application name="mall-manager-web"/>
 
