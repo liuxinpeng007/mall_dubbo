@@ -90,6 +90,12 @@
             <artifactId>zkclient</artifactId>
         </dependency>
 
+        <!-- 防止报警告 依赖一下mybatis分页插件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- 需要使用tomcat组件 -->

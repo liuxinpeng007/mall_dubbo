@@ -1,14 +1,15 @@
 package cn.mall.controller;
 
+import cn.mall.common.pojo.EsayUIDataGridResult;
 import cn.mall.pojo.TbItem;
 import cn.mall.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
 
 /**
  * 商品Controller
@@ -34,9 +35,9 @@ public class ItemController {
         return item;
     }
 
-    @RequestMapping("/item/all")
+    @RequestMapping("/item/list")
     @ResponseBody
-    public List<TbItem> queryAllItemInfo() {
-        return itemService.queryAllItemInfo();
+    public EsayUIDataGridResult queryAllItemInfo(@RequestParam("page") int page, @RequestParam("rows") int rows) {
+        return itemService.queryAllItemInfo(page, rows);
     }
 }
