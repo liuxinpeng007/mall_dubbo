@@ -23,6 +23,9 @@
     <dubbo:protocol name="dubbo" port="20880" />
 
     <!-- 声明需要暴露的服务接口 -->
+    <!-- 商品Serviec -->
     <dubbo:service interface="cn.mall.service.ItemService" ref="itemServiceImpl" />
+    <!-- 商品分类Service -->
+    <dubbo:service interface="cn.mall.service.ItemCatService" ref="itemCatServiceImpl"/>
 
 </beans>

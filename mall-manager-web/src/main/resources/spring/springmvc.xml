@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:dubbp="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
@@ -28,5 +28,9 @@
     <dubbo:registry protocol="zookeeper" address="192.168.25.128:2181"/>
 
     <!-- 调用服务，根据接口来决定调用哪个服务， id是给改服务起的名称 -->
-    <dubbo:reference interface="cn.mall.service.ItemService" id="itemService"/>
+    <!-- 商品Service -->
+    <dubbo:reference interface="cn.mall.service.ItemService" id="itemService" timeout="3000"/>
+    <!-- 商品分类Service -->
+    <dubbp:reference interface="cn.mall.service.ItemCatService" id="itemCatService" timeout="3000"/>
+
 </beans>
